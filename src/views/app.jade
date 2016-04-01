@@ -13,8 +13,8 @@ block body
       input#domoName(type="text", name="name", placeholder="Domo Name")
       label(for="age") Age: 
       input#domoAge(type="text", name="age", placeholder="Domo Age")
-      label(for="favoriteColor") FavColor:          
-      input#domoFavoriteColor(type="text", name="favoriteColor", placeholder="FavoriteColor")
+      label(for="height") FavColor:          
+      input#domoHeight(type="text", name="height", placeholder="height")
       input(type="hidden", name="_csrf", value="#{csrfToken}")
       a#makeDomoSubmit(class="makeDomoSubmit", href="#") Make Domo
   section#domos
@@ -24,7 +24,7 @@ block body
     else
         each val in domos
             div.domo
-                a(href="/killer/#{val._id}", class="remove") REMOVE
+                a(href="/killer/#{val._id}", class="remove") Delete
                 img(class="domoFace", src="/assets/img/domoface.jpeg", alt="domo face")
                 h3.domoName Name: #{val.name}
                 h3.domoAge Age: #{val.age}
