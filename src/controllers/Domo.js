@@ -15,8 +15,8 @@ var makerPage = function(req, res){
 };
 
  var makeDomo = function(req, res){
-     if(!req.body.name || !req.body.age || !req.body.favoriteColor){
-         return res.status(400).json({error: "RAWR! name, age and Favorite Color are required"});
+     if(!req.body.name || !req.body.age || !req.body.height){
+         return res.status(400).json({error: "RAWR! name, age and height are required"});
      }
      
 
@@ -24,7 +24,7 @@ var makerPage = function(req, res){
      var domoData = {
          name: req.body.name,
          age: req.body.age,
-         favoriteColor: req.body.favoriteColor,
+         height: req.body.height,
          owner: req.session.account._id
          
      };

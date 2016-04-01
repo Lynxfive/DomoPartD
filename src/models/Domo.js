@@ -21,9 +21,9 @@ var DomoSchema = new mongoose.Schema({
         required: true
     },
     
-    favoriteColor: {
-      type: String,
-      trim: true,
+    height: {
+      type: Number,
+      min: 0,
       required: true,
         
     },
@@ -44,7 +44,7 @@ DomoSchema.methods.toAPI = function(){
   return {
       name: this.name,
       age: this.age,
-      favoriteColor: this.favoriteColor
+      height: this.height
    };
 };
 
@@ -53,7 +53,7 @@ DomoSchema.statics.findByOwner = function(ownerId, callback){
       //owner: mongoose.Types.ObjectId(ownerId)
       owner: ownerId
    };
-    return DomoModel.find(search).select("name age favoriteColor").exec(callback);
+    return DomoModel.find(search).select("name age height").exec(callback);
 };
 
 DomoModel = mongoose.model('Domo', DomoSchema);
