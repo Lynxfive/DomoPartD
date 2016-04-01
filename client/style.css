@@ -275,5 +275,7 @@ h3.domoHeight {
 }
 
 .remove{
-    float: right;
+    position: absolute; 
+	bottom:3px; 
+	right:3px;
 }
